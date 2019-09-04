@@ -112,3 +112,41 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+function newFunction(title, date, firstParagraph, secondParagraph, thirdParagraph) {
+  const article = document.createElement('div');
+  const header = document.createElement('h2');
+  const theDate = document.createElement('p');
+  const p1 = document.createElement('p');
+  const p2 = document.createElement('p');
+  const p3 = document.createElement('p');
+  const expand = document.createElement('span');
+
+
+  //Setup Structure of Elements
+  article.appendChild(header);
+  article.appendChild(theDate)
+  article.appendChild(p1);
+  article.appendChild(p2);
+  article.appendChild(p3);
+  article.appendChild(expand);
+  //Setup Classes
+  article.classList.add('article');
+  theDate.classList.add('date');
+  expand.classList.add('expandButton');
+
+  //Setup Text
+  header.textContent = title;
+  theDateate.textContent = date;
+  p1.textContent = firstParagraph;
+  p2.textContent = secondParagraph;
+  p3.textContent = thirdParagraph;
+
+  //ButtonListener
+  
+
+
+
+
+  return article;
+}
