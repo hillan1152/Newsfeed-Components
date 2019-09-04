@@ -107,16 +107,21 @@ const data = [
 
   Step 3: return the entire component.
 
-  Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
+  Step 4: Map over the data, creating a component for each object and add each component to the DOM as children of the 'articles' div.
 
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+const articles = document.querySelector('.articles');
+
+data.forEach(thing => {
+  articles.appendChild(newFunction(thing.title, thing.date, thing.firstParagraph, thing.secondParagraph, thing.thirdParagraph))
+});
 
 function newFunction(title, date, firstParagraph, secondParagraph, thirdParagraph) {
   const article = document.createElement('div');
   const header = document.createElement('h2');
-  const theDate = document.createElement('p');
+  const articleDate = document.createElement('p');
   const p1 = document.createElement('p');
   const p2 = document.createElement('p');
   const p3 = document.createElement('p');
@@ -125,28 +130,34 @@ function newFunction(title, date, firstParagraph, secondParagraph, thirdParagrap
 
   //Setup Structure of Elements
   article.appendChild(header);
-  article.appendChild(theDate)
+  article.appendChild(articleDate)
   article.appendChild(p1);
   article.appendChild(p2);
   article.appendChild(p3);
   article.appendChild(expand);
   //Setup Classes
   article.classList.add('article');
-  theDate.classList.add('date');
+  articleDate.classList.add('date');
   expand.classList.add('expandButton');
 
   //Setup Text
   header.textContent = title;
-  theDateate.textContent = date;
+  articleDate.textContent = date;
   p1.textContent = firstParagraph;
   p2.textContent = secondParagraph;
   p3.textContent = thirdParagraph;
+  expand.textContent = 'click';
 
   //ButtonListener
-  
-
-
-
+  article.addEventListener('click', (e) => {
+    console.log('button clicked', e.target)
+    article.classList.toggle('article-open');
+    article.classList.toggle('close');
+  })
 
   return article;
 }
+
+
+
+
