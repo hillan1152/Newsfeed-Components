@@ -114,9 +114,9 @@ const data = [
 */
 const articles = document.querySelector('.articles');
 
-data.forEach(thing => {
-  articles.appendChild(newFunction(thing.title, thing.date, thing.firstParagraph, thing.secondParagraph, thing.thirdParagraph))
-});
+// data.forEach(thing => {
+//   articles.appendChild(newFunction(thing.title, thing.date, thing.firstParagraph, thing.secondParagraph, thing.thirdParagraph))
+// });
 
 function newFunction(title, date, firstParagraph, secondParagraph, thirdParagraph) {
   const article = document.createElement('div');
@@ -158,6 +158,22 @@ function newFunction(title, date, firstParagraph, secondParagraph, thirdParagrap
   return article;
 }
 
+// let newComponent1 = data.map((item) => {
+//   let newColor = item.addEventListener('mouseover', event => {event.target.style.color = 'red'})
+//   return newColor
+// })
+
+let newComponent = data.map((item) => {
+  let newColor = article.addEventListener('mouseover', item => {item.target.style.backgroundColor = 'red'})
+  return newColor
+})
+
+newComponent.forEach(thing => {
+  articles.appendChild(newComponent(thing.title, thing.date, thing.firstParagraph, thing.secondParagraph, thing.thirdParagraph));
+})
+// article.forEach(() => {
+//   article.appendChild(newComponent1)
+// })
 
 
 
