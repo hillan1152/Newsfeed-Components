@@ -35,16 +35,34 @@ let menuItems = [
 */
 
 const header = document.querySelector('.header');
-const menu = document.querySelector('.menu-button')
 
-function menuPanel() {
+
+function menuPanel(arr) {
   const divMenu = document.createElement('div');
   const list = document.createElement('ul');
-  const items = doument.createElement('li');
-
-  menu.appendChild(divMenu);
+  //connect divs
+  header.appendChild(divMenu);
   divMenu.appendChild(list);
-  list.appendChild(items);
 
-  
+  //create class
+  divMenu.classList.add('menu')
+
+  //Create List Items
+  menuItems.forEach(e => {
+    const liItem = document.createElement('li');
+    list.appendChild(liItem);
+    liItem.textContent = e;
+  })
+
+  //create button
+  const btnMenu = document.querySelector('.menu-button');
+  btnMenu.addEventListener('click', e => {
+    console.log('menu click', e.target)
+    divMenu.classList.toggle('menu--open')
+    divMenu.classList.toggle('.menu-button');
+  })
+
+  return divMenu
 }
+
+menuPanel(menuItems);
