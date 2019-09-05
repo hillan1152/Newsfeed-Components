@@ -114,9 +114,9 @@ const data = [
 */
 const articles = document.querySelector('.articles');
 
-// data.forEach(thing => {
-//   articles.appendChild(newFunction(thing.title, thing.date, thing.firstParagraph, thing.secondParagraph, thing.thirdParagraph))
-// });
+data.forEach(thing => {
+  articles.appendChild(newFunction(thing.title, thing.date, thing.firstParagraph, thing.secondParagraph, thing.thirdParagraph))
+});
 
 function newFunction(title, date, firstParagraph, secondParagraph, thirdParagraph) {
   const article = document.createElement('div');
@@ -158,22 +158,96 @@ function newFunction(title, date, firstParagraph, secondParagraph, thirdParagrap
   return article;
 }
 
-// let newComponent1 = data.map((item) => {
-//   let newColor = item.addEventListener('mouseover', event => {event.target.style.color = 'red'})
+// Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
+const d = 'AUGUST 1';
+const t = 'ZombieLand';
+const p1 = ';alskdjf ;alsdkfjas f;lkjasd;fl asj;dflajs;dflka sjdf'
+const p2 = 'lorem alskdjf;alskd jfalskjfd;alsdfj'
+const p3 = 'Thursday night football'
+
+
+articles.appendChild(newFunction(t, d, p1, p2, p3));
+
+
+
+
+// const articles1 = Array.from(document.querySelector('.articles'));
+// console.log(articles1);
+// const variable1 = Array.from(articles).map((item) => {
+//   console.log(item);
+//   let newColor = item.addEventListener('mouseover', e => {e.target.style.backgroundColor = 'red'})
 //   return newColor
 // })
 
-let newComponent = data.map((item) => {
-  let newColor = article.addEventListener('mouseover', item => {item.target.style.backgroundColor = 'red'})
-  return newColor
-})
+// console.log(variable1);
 
-newComponent.forEach(thing => {
-  articles.appendChild(newComponent(thing.title, thing.date, thing.firstParagraph, thing.secondParagraph, thing.thirdParagraph));
-})
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let newComponent1 = articles.map((item) => {
+  // console.log(item);
+  // let newColor = item.addEventListener('mouseover', e => {e.target.style.backgroundColor = 'red'})
+  // return newColor
+// });
+
+
+// data.forEach(thing => {
+//   articles.appendChild(newComponent1(thing.title, thing.date, thing.firstParagraph, thing.secondParagraph, thing.thirdParagraph))
+// });
+
+
+
+
+
+
+// }
+// newComponent.forEach(thing => {
+//   articles.appendChild(newFunction(thing.title, thing.date, thing.firstParagraph, thing.secondParagraph, thing.thirdParagraph));
+// })
 // article.forEach(() => {
 //   article.appendChild(newComponent1)
 // })
 
 
 
+
+
+//////////THIS IS AN ANSWER I HAVE NO IDEA WHY//////////////
+
+// const change = () => {
+//   // articleDiv.classList.contains('article-open') ? TweenMax.from(articleDiv, 0.5, { height: '50' }) : TweenMax.to(articleDiv, 0.5, { height: '50' });
+//   if (article.classList.contains('article-open')) {
+//     expandButton.textContent = 'Click to close';
+//     TweenMax.set(articleDiv, { height: 'auto' });
+//     TweenMax.from(articleDiv, 0.5, { height: '50' });
+//   } else {
+//     expandButton.textContent = 'Click to expand';
+//     TweenMax.to(articleDiv, 0.5, { height: '50' });
+//   }
+//   return articleDiv;
+// }
+
+// data.map(article => {
+//   const article = createArticles(article);
+//   const articlesContainer = document.querySelector('.articles');
+//   articlesContainer.appendChild(article);
+// });
+
+
+//////////////////WORKING ON THIS ONE BELOW///////////////////////////////////
+
+
+// data.map((item) => {
+//   item.addEventListener('mouseover', item => {item.target.style.backgroundColor = 'red'})
+//   return newComponent;
+// })
